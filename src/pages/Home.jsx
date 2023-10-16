@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout activeLink={"dashboard"}>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde dolores,
       expedita assumenda voluptas natus iure laboriosam animi, ab harum hic
       quaerat, praesentium modi vero quos autem ducimus placeat. Et, corrupti?

@@ -9,21 +9,21 @@ import {
 import Sidebar from "./Siderbar";
 import { Link } from "react-router-dom";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, activeLink }) => {
   return (
     <div>
       <div style={{ display: "flex" }}>
-        <Sidebar style={{ float: "left" }} />
+        <Sidebar style={{ float: "left" }} activeLink={activeLink} />
 
         <div className="w-100 m-0 p-0">
-          <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <div class="container-fluid">
-              <div class="navbar-nav">
-                <Link class="nav-link active" aria-current="page" to="/">
+          <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div className="container-fluid">
+              <div className="navbar-nav">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
                 </Link>
                 <p className="text-light mt-2 ">{">"}</p>
-                <Link class="nav-link active" aria-current="page" to="/">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Link
                 </Link>
               </div>

@@ -31,7 +31,7 @@ const DbConfig = () => {
   ];
 
   return (
-    <Layout>
+    <Layout activeLink="dbConfig">
       <div className="row">
         <div className="col-9">
           <h1>Database Configurations </h1>
@@ -58,7 +58,7 @@ const DbConfig = () => {
         <tbody>
           {dbConfigs.length > 0 ? (
             dbConfigs.map((dbConfig) => (
-              <tr>
+              <tr key={dbConfig.id}>
                 <td>{dbConfig.id}</td>
                 <td>{dbConfig.name}</td>
                 <td>{dbConfig.engine}</td>
@@ -74,7 +74,7 @@ const DbConfig = () => {
                   |{" "}
                   <Link
                     className="btn btn-info"
-                    to={`/dbconfig/id=${dbConfig.id}/true`}
+                    to={`/dbconfig/id=${dbConfig.id}/viewOnly=true`}
                   >
                     View
                   </Link>{" "}

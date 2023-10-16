@@ -55,6 +55,7 @@ const App = () => {
                 element={<DbConfigForm />}
               />
               <Route path="metadata" element={<MetaData />} />
+              <Route path="metadata/:id" element={<MetaData />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Route>
           </Routes>

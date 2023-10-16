@@ -11,7 +11,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 
-const Sidebar = () => {
+const Sidebar = ({ activeLink }) => {
   return (
     <div
       style={{
@@ -34,26 +34,42 @@ const Sidebar = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/" activeClassName="activeClicked">
+            <NavLink
+              exact={"true"}
+              to="/"
+              className={activeLink === "dashboard" && "activeClicked"}
+            >
               <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/dbconfig" activeClassName="activeClicked">
+            <NavLink
+              exact={"true"}
+              to="/dbconfig"
+              className={activeLink === "dbConfig" && "activeClicked"}
+            >
               <CDBSidebarMenuItem icon="table">DB Config</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/metadata" activeClassName="activeClicked">
+            <NavLink
+              exact={"true"}
+              to="/metadata"
+              className={activeLink === "metaData" && "activeClicked"}
+            >
               <CDBSidebarMenuItem icon="user">MetaData</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/" activeClassName="activeClicked">
+            <NavLink
+              exact={"true"}
+              to="/"
+              className={activeLink === "analytics" && "activeClicked"}
+            >
               <CDBSidebarMenuItem icon="chart-line">
                 Analytics
               </CDBSidebarMenuItem>
             </NavLink>
 
             {/* <NavLink
-              exact
+              exact={"true"}
               to="/hero404"
               target="_blank"
-              activeClassName="activeClicked"
+               className={activeLink === "dashboard" && "activeClicked"}
             >
               <CDBSidebarMenuItem icon="exclamation-circle">
                 404 page
