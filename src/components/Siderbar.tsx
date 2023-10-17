@@ -11,7 +11,11 @@ import { Link, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 
-const Sidebar = ({ activeLink }) => {
+type Props = {
+  activeLink: String;
+};
+
+const Sidebar: React.FC<Props> = ({ activeLink }) => {
   return (
     <div
       style={{
@@ -21,7 +25,15 @@ const Sidebar = ({ activeLink }) => {
         float: "left",
       }}
     >
-      <CDBSidebar textColor="#fff" className="bg-dark">
+      <CDBSidebar
+        textColor="#fff"
+        className="bg-dark"
+        backgroundColor={""}
+        breakpoint={0}
+        toggled={false}
+        minWidth={"100px"}
+        maxWidth={"250px"}
+      >
         <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
           <Link
             to="/"
@@ -35,30 +47,26 @@ const Sidebar = ({ activeLink }) => {
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
             <NavLink
-              exact={"true"}
               to="/"
-              className={activeLink === "dashboard" && "activeClicked"}
+              className={activeLink === "dashboard" ? "activeClicked" : ""}
             >
               <CDBSidebarMenuItem icon="columns">Dashboard</CDBSidebarMenuItem>
             </NavLink>
             <NavLink
-              exact={"true"}
               to="/dbconfig"
-              className={activeLink === "dbConfig" && "activeClicked"}
+              className={activeLink === "dbConfig" ? "activeClicked" : ""}
             >
               <CDBSidebarMenuItem icon="table">DB Config</CDBSidebarMenuItem>
             </NavLink>
             <NavLink
-              exact={"true"}
               to="/metadata"
-              className={activeLink === "metaData" && "activeClicked"}
+              className={activeLink === "metaData" ? "activeClicked" : ""}
             >
               <CDBSidebarMenuItem icon="user">MetaData</CDBSidebarMenuItem>
             </NavLink>
             <NavLink
-              exact={"true"}
               to="/"
-              className={activeLink === "analytics" && "activeClicked"}
+              className={activeLink === "analytics" ? "activeClicked" : ""}
             >
               <CDBSidebarMenuItem icon="chart-line">
                 Analytics
@@ -78,10 +86,11 @@ const Sidebar = ({ activeLink }) => {
           </CDBSidebarMenu>
         </CDBSidebarContent>
 
-        <CDBSidebarFooter style={{ textAlign: "center" }}>
+        <CDBSidebarFooter>
           <div
             style={{
               padding: "20px 5px",
+              textAlign: "center",
             }}
           >
             <small>

@@ -46,5 +46,5 @@ body {
 }
 
 .activeClicked {
-  background: red;
+  color: black !important;
 }

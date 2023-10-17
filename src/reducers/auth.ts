@@ -6,14 +6,22 @@ import {
   USER_LOADED,
 } from "../actions/types";
 
-const initialState = {
+const initialState: {
+  token: string | null;
+  isAuthenticated: boolean | null;
+  loading: boolean | null;
+  user: object | null;
+} = {
   token: localStorage.getItem("token"),
   isAuthenticated: null,
   loading: true,
   user: null,
 };
 
-export default function auth(state = initialState, action) {
+export default function auth(
+  state = initialState,
+  action: { payload: any; type: String }
+) {
   const { payload, type } = action;
   switch (type) {
     case USER_LOADED:

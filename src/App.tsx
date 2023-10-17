@@ -13,7 +13,6 @@ import setAuthToken from "./utils/setAuthToken";
 import store from "./store";
 import { Provider } from "react-redux";
 import { loadUser } from "./actions/auth";
-import PrivateRoute from "./routing/PrivateRoute";
 import DbConfig from "./pages/DbConfig";
 import MetaData from "./pages/MetaData";
 import DbConfigForm from "./pages/DbConfigForm";
@@ -22,7 +21,11 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-const Wrapper = ({ children }) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+const Wrapper: React.FC<Props> = ({ children }) => {
   const location = useLocation();
   useLayoutEffect(() => {
     document.documentElement.scrollTo(0, 0);
@@ -33,7 +36,7 @@ const Wrapper = ({ children }) => {
 const App = () => {
   useEffect(() => {
     if (localStorage.token) {
-      store.dispatch(loadUser());
+      store.dispatch<any>(loadUser());
     }
   }, []);
 

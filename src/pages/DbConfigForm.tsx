@@ -20,13 +20,13 @@ const DbConfigForm = () => {
 
   const { name, engine, username, password } = formData;
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     console.log(name, engine, username, password);
   };
 
-  const onChange = (e) =>
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (

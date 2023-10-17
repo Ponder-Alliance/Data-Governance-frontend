@@ -1,19 +1,18 @@
 import React from "react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faDatabase,
-  faInfo,
-  faTachometer,
-} from "@fortawesome/free-solid-svg-icons";
 import Sidebar from "./Siderbar";
 import { Link } from "react-router-dom";
 
-const Layout = ({ children, activeLink }) => {
+type Props = {
+  children: React.ReactNode;
+  activeLink: String;
+};
+
+const Layout: React.FC<Props> = ({ children, activeLink }) => {
   return (
     <div>
       <div style={{ display: "flex" }}>
-        <Sidebar style={{ float: "left" }} activeLink={activeLink} />
+        <Sidebar activeLink={activeLink} />
 
         <div className="w-100 m-0 p-0">
           <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
