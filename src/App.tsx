@@ -16,6 +16,9 @@ import { loadUser } from "./actions/auth";
 import DbConfig from "./pages/DbConfig";
 import MetaData from "./pages/MetaData";
 import DbConfigForm from "./pages/DbConfigForm";
+import BusinessDomain from "./pages/BusinessDomain";
+import BusinessDomainForm from "./pages/BusinessDomainForm";
+import CatalogMapping from "./pages/CatalogMapping";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -47,6 +50,16 @@ const App = () => {
           <Routes>
             <Route path="/*">
               <Route path="" element={<Home />} />
+              <Route index path="business" element={<BusinessDomain />} />
+              <Route
+                path="business/:businessID/:viewOnly"
+                element={<BusinessDomainForm />}
+              />
+              <Route
+                path="business/edit/:businessID"
+                element={<BusinessDomainForm />}
+              />
+              <Route path="business/add" element={<BusinessDomainForm />} />
               <Route index path="dbconfig" element={<DbConfig />} />
               <Route path="dbconfig/add" element={<DbConfigForm />} />
               <Route
@@ -58,6 +71,7 @@ const App = () => {
                 element={<DbConfigForm />}
               />
               <Route path="metadata" element={<MetaData />} />
+              <Route path="catalog" element={<CatalogMapping />} />
               <Route path="metadata/:id" element={<MetaData />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Route>

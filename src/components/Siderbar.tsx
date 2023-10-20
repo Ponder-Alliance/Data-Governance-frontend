@@ -65,6 +65,23 @@ const Sidebar: React.FC<Props> = ({ activeLink }) => {
               <CDBSidebarMenuItem icon="user">MetaData</CDBSidebarMenuItem>
             </NavLink>
             <NavLink
+              to="/business"
+              className={activeLink === "business" ? "activeClicked" : ""}
+            >
+              <CDBSidebarMenuItem icon="dollar">
+                Business Domains
+              </CDBSidebarMenuItem>
+            </NavLink>
+
+            <NavLink
+              to="/catalog"
+              className={activeLink === "catalog" ? "activeClicked" : ""}
+            >
+              <CDBSidebarMenuItem icon="map">
+                Catalog Mapping
+              </CDBSidebarMenuItem>
+            </NavLink>
+            <NavLink
               to="/"
               className={activeLink === "analytics" ? "activeClicked" : ""}
             >
