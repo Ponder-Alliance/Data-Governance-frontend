@@ -65,13 +65,13 @@ const DbConfig = () => {
                 <td>{dbConfig.user}</td>
                 <td>{dbConfig.password}</td>
                 <td>
-                  <Link
+                  {/* <Link
                     className="btn btn-dark"
                     to={`/dbconfig/edit/${dbConfig.id}`}
                   >
                     Edit
                   </Link>{" "}
-                  |{" "}
+                  |{" "} */}
                   <Link
                     className="btn btn-info"
                     to={`/dbconfig/id=${dbConfig.id}/viewOnly=true`}

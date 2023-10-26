@@ -12,6 +12,34 @@ const CatalogMapping = () => {
         <hr />
       </div>
       <br />
+      <section className="p-5">
+        <form>
+          <div className="row">
+            <div className="col">
+              <div className="form-group">
+                <select className="form-control">
+                  <option>Select Business Domain</option>
+                  <option>Business Domain 1</option>
+                  <option>Business Domain 2</option>
+                  <option>Business Domain 3</option>
+                </select>
+              </div>
+            </div>
+            <div className="col">
+              <div className="form-group">
+                <select className="form-control">
+                  <option>Select Entity Domain</option>
+                  <option>Entity Domain 1</option>
+                  <option>Entity Domain 2</option>
+                  <option>Entity Domain 3</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <br />
+          <button className="btn btn-dark w-100">Save</button>
+        </form>
+      </section>
     </Layout>
   );
 };
